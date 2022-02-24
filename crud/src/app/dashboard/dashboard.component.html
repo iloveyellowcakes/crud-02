@@ -1,45 +1,55 @@
 
+
 <section class="conatiner  ">
-
-
 
   <table class="table mt-5 mx-auto w-75 bg-body text-primary">
 
     <thead class="border-primary text-center p-2 ">
+
       <tr class="align-middle ">
         <th scope="col">#</th>
         <th scope="col"> Nome </th>
         <th scope="col"> Email </th>
         <th scope="col"> Idade </th>
         <th scope="col">
-          <app-modal></app-modal>
+          <app-register-modal></app-register-modal>
         </th>
 
       </tr>
 
     </thead>
 
-    <tbody class="text-center">
+    <tbody class="text-center" *ngIf="users?.length! > 0; else emptyList">
 
-      <tr class="align-middle">
-        <th scope="row">1</th>
-        <td> Mark </td>
-        <td> mark@hotmail.com </td>
-        <td> 15 </td>
+      <tr class="align-middle" *ngFor="let user of users">
+
+        <th scope="row"> {{ user?.id }} </th>
+        <td> {{ user?.fullName }} </td>
+        <td> {{ user?.email }} </td>
+        <td> {{ user?.age }}  </td>
+
         <td class="btn-group">
           <button class="btn btn-success">
             <i class="bi bi-pencil-square"></i>
             Editar
           </button>
-          <button class="btn btn-danger">
+          <button
+            class="btn btn-danger"
+            (click)="removeUser(user)"
+          >
             <i class="bi bi-trash"></i>
             Excluir
           </button>
         </td>
+
       </tr>
 
 
     </tbody>
+
+    <ng-template #emptyList>
+      sem usuários
+    </ng-template>
 
   </table>
 
