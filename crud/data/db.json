@@ -1,28 +1,22 @@
 {
   "students": [
     {
-      "fullName": "Lucio",
-      "email": "danielle@hotmail.com",
-      "age": 14,
-      "id": 11
+      "fullName": "catapora",
+      "email": "daniellerukia@hotmail.com",
+      "age": 54,
+      "id": 1
     },
     {
-      "fullName": "Lucio",
-      "email": "ana@hotmail.com",
-      "age": 14,
-      "id": 12
+      "fullName": "catapora",
+      "email": "daniellerukia@hotmail.com",
+      "age": 64,
+      "id": 2
     },
     {
-      "fullName": "Vitu",
-      "email": "vitu@hotmail.com",
+      "fullName": "catapora",
+      "email": "daniellerukia@hotmail.com",
       "age": 14,
-      "id": 13
-    },
-    {
-      "fullName": "Lucio",
-      "email": "lucio@hotmail.com",
-      "age": 14,
-      "id": 14
+      "id": 3
     }
   ]
 }
