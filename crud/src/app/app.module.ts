@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AlertComponent } from './shared/errors/alert/alert.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

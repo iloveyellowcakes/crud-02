@@ -4,13 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardFormComponent } from './dashboard-form/dashboard-form.component';
-import { RegisterModalComponent } from './register-modal/register-modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
     DashboardFormComponent,
-    RegisterModalComponent,
     DashboardComponent
   ],
   imports: [
@@ -21,7 +19,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   ],
   exports: [
     DashboardFormComponent,
-    RegisterModalComponent,
     DashboardComponent
 
   ]

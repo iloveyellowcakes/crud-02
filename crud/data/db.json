@@ -2,21 +2,27 @@
   "students": [
     {
       "fullName": "Lucio",
-      "email": "lucio@hotmail.com",
+      "email": "danielle@hotmail.com",
       "age": 14,
-      "id": 1
+      "id": 11
     },
     {
-      "fullName": "Danielle Alves",
+      "fullName": "Lucio",
       "email": "ana@hotmail.com",
       "age": 14,
-      "id": 2
+      "id": 12
+    },
+    {
+      "fullName": "Vitu",
+      "email": "vitu@hotmail.com",
+      "age": 14,
+      "id": 13
     },
     {
       "fullName": "Lucio",
       "email": "lucio@hotmail.com",
       "age": 14,
-      "id": 3
+      "id": 14
     }
   ]
 }

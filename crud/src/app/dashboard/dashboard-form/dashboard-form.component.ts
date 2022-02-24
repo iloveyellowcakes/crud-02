@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { DialogService } from './../../shared/services/dialog.service';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Observable, switchMap } from 'rxjs';
 
 import { User } from 'src/app/core/user/user';
@@ -21,10 +22,11 @@ export class DashboardFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
+    private modalService: BsModalService,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit(): void {
-
 
     this.formDash = this.formBuilder.group({
 
@@ -36,21 +38,28 @@ export class DashboardFormComponent implements OnInit {
 
   }
 
-  // public register() {
+  openModal(template: TemplateRef<any>) {
 
-  //   const newUser = this.formDash.getRawValue() as User;
+    this.modalRef = this.modalService.show(template);
 
-  //   this.userService.addUser(newUser)
-  //     .subscribe(() => {
-  //       this.formDash.reset()
-  //     })
-  // }
+  }
+
+  public closeModal () {
+    this.modalRef.hide()
+  }
+
   public register() {
 
     const newUser = this.formDash.getRawValue() as User;
 
-    this.user$ = this.userService.addUser(newUser)
-      .pipe(switchMap(() => this.userService.getUser()));
+    this.userService.addUser(newUser)
+      .subscribe(() => {
+
+        this.formDash.reset()
+        this.closeModal()
+        this.dialogService.alert('Atenção', 'cadastro realizado com sucesso', 'ok' )
+
+      })
 
   }
 

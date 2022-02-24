@@ -1,0 +1,18 @@
+
+<div class="modal-header bg-primary border-0">
+
+  <h5 class="text-center w-100 m-auto pl-3"><strong>{{title}}</strong></h5>
+
+  <button type="button" class="btn close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+
+<div class="modal-body text-center">
+    <div class="regular" [innerHTML]="msg">{{msg}}</div>
+</div>
+
+<div class="modal-footer border-0 text-center mx-auto mt-0 pt-0">
+  <button type="button" class="btn btn-primary w-100" (click)="close(true)">{{button || 'OK'}}</button>
+</div>

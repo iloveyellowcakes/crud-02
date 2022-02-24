@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 
 import { User } from 'src/app/core/user/user';
 import { UserService } from '../core/user/user.service';
@@ -8,7 +8,7 @@ import { UserService } from '../core/user/user.service';
   templateUrl: './dashboard.component.html',
 
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, AfterViewInit{
 
   @Input() users!: User[];
 
@@ -19,6 +19,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUser();
+  }
+
+  ngAfterViewInit() {
+    this.userService._dados
+      .subscribe(data => {
+        this.users = data
+      });
+    console.log(this.users);
   }
 
   getAllUser() {
