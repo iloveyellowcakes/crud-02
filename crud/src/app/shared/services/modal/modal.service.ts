@@ -1,7 +1,6 @@
 import { ModalFormComponent } from './../../errors/modal-form/modal-form.component';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { Injectable, TemplateRef } from '@angular/core';
-import { AlertComponent } from '../../errors/alert/alert.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +11,14 @@ export class ModalService {
   modalRef: BsModalRef = new BsModalRef;
   defaultOptions: ModalOptions = new ModalOptions;
 
-  constructor(private bsModalService: BsModalService) {}
+  constructor(private bsModalService: BsModalService) { }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.bsModalService.show(template);
   }
 
   closeModal() {
-    this.modalRef.hide()
+    this.modalRef.hide();
   }
 
 
@@ -34,16 +33,13 @@ export class ModalService {
     };
 
     this.modalRef = this.bsModalService.show(ModalFormComponent, this.defaultOptions);
-    this.modalRef.content.title = title
-    this.modalRef.content.button = button
-    this.modalRef.content.button2 = button2
-    this.modalRef.content.info = info
-
-    console.log(info, 'Info serviço');
+    this.modalRef.content.title = title;
+    this.modalRef.content.button = button;
+    this.modalRef.content.button2 = button2;
+    this.modalRef.content.info = info;
 
 
-
-    return(this.modalRef.content as ModalFormComponent).confirmResult
+    return (this.modalRef.content as ModalFormComponent).confirmResult;
 
   }
 
