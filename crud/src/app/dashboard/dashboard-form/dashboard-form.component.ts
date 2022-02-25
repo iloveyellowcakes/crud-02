@@ -1,11 +1,12 @@
-import { DialogService } from './../../shared/services/dialog.service';
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { ModalService } from './../../shared/services/modal/modal.service';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { Observable, switchMap } from 'rxjs';
+
+import { Observable } from 'rxjs';
 
 import { User } from 'src/app/core/user/user';
 import { UserService } from 'src/app/core/user/user.service';
+import { DialogService } from 'src/app/shared/services/dialog/dialog.service';
 
 @Component({
   selector: 'app-dashboard-form',
@@ -15,15 +16,15 @@ import { UserService } from 'src/app/core/user/user.service';
 export class DashboardFormComponent implements OnInit {
 
   formDash!: FormGroup;
-  modalRef!: BsModalRef;
-
   user$!: Observable<User[]>;
 
   constructor(
+
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private modalService: BsModalService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private modalService: ModalService
+
   ) { }
 
   ngOnInit(): void {
@@ -38,14 +39,12 @@ export class DashboardFormComponent implements OnInit {
 
   }
 
-  openModal(template: TemplateRef<any>) {
-
-    this.modalRef = this.modalService.show(template);
-
+  public openModal(template: any) {
+    this.modalService.openModal(template);
   }
 
-  public closeModal () {
-    this.modalRef.hide()
+  public closeModal() {
+    this.modalService.closeModal();
   }
 
   public register() {
@@ -55,11 +54,11 @@ export class DashboardFormComponent implements OnInit {
     this.userService.addUser(newUser)
       .subscribe(() => {
 
-        this.formDash.reset()
-        this.closeModal()
-        this.dialogService.alert('Atenção', 'cadastro realizado com sucesso', 'ok' )
+        this.formDash.reset();
+        this.modalService.closeModal();
+        this.dialogService.alert('Atenção', 'cadastro realizado com sucesso', 'ok');
 
-      })
+      });
 
   }
 

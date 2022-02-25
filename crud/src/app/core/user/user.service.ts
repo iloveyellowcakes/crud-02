@@ -33,6 +33,15 @@ export class UserService {
     return this.httpClient.delete(`${API}/students/${userId}`);
   }
 
+  updateUser(userId: number, data: User) {
+
+    console.log(userId, data, 'update user');
+
+    return this.httpClient.put<User>(`${API}/students/${userId}`, data)
+      .pipe(map((res: any) => { return res; }));
+
+  }
+
   refreshUser() {
     this.getUser()
       .subscribe(data => {

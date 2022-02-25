@@ -1,22 +1,16 @@
 {
   "students": [
     {
-      "fullName": "catapora",
-      "email": "daniellerukia@hotmail.com",
-      "age": 54,
-      "id": 1
+      "fullName": "Lucio",
+      "email": "ana@hotmail.com",
+      "age": 15,
+      "id": 4
     },
     {
-      "fullName": "catapora",
-      "email": "daniellerukia@hotmail.com",
-      "age": 64,
-      "id": 2
-    },
-    {
-      "fullName": "catapora",
-      "email": "daniellerukia@hotmail.com",
-      "age": 14,
-      "id": 3
+      "fullName": "Lucio",
+      "email": "lucio@hotmail.com",
+      "age": 52,
+      "id": 5
     }
   ]
 }

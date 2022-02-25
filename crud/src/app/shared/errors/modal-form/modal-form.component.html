@@ -1,0 +1,79 @@
+
+<div class="modal-header bg-primary border-0">
+
+  <h5 class="text-center text-secondary w-100 m-auto ps-3">
+    <strong> {{ title }} </strong>
+  </h5>
+
+  <button
+    type="button"
+    class="btn close text-secondary"
+    data-dismiss="modal"
+    aria-label="Close"
+    (click)="modalRef.hide()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+
+<div class="modal-body">
+
+  <form class="form container" [formGroup]="formDash">
+
+    <div class="mb-3">
+      <label for="name"> Nome </label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="fullName"
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="email"> Email </label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="age"> Idade </label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        formControlName="age"
+      >
+    </div>
+
+    <div class="btn-group ">
+
+      <button
+        type="button"
+        class="btn btn-primary text-secondary"
+        [disabled]="formDash.invalid"
+        (click)="registerOrUpdate()"
+      >
+        {{ button || 'cadastrar' }}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-primary text-secondary "
+        [disabled]="formDash.invalid"
+        (click)="cancel()"
+      >
+        {{ button2 || 'cancelar' }}
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
+

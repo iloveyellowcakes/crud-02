@@ -1,16 +1,27 @@
-<section class="conatiner  ">
+<section class="table-responsive mx-auto">
 
-  <table class="table mt-5 mx-auto w-75 bg-body text-primary">
+  <table class="table  mt-5 mx-auto w-75 bg-body text-primary">
+
 
     <thead class="border-primary text-center p-2 ">
 
       <tr class="align-middle ">
-        <th scope="col">#</th>
+
+        <th scope="col"> # </th>
         <th scope="col"> Nome </th>
         <th scope="col"> Email </th>
         <th scope="col"> Idade </th>
         <th scope="col">
-          <app-dashboard-form></app-dashboard-form>
+          <button
+            type="button"
+            class="btn btn-primary text-secondary w-75 fw-bold d-inline-flex align-items-center justify-content-center"
+            (click)="register()"
+          >
+            <i class="bi bi-person-plus-fill fs-5" aria-label="Cadastrar"></i>
+            <p class="d-none d-sm-table my-0 ms-2 fw-bold fs-5"> Cadastrar </p>
+
+          </button>
+          <!-- <app-dashboard-form></app-dashboard-form> -->
         </th>
 
       </tr>
@@ -26,27 +37,43 @@
         <td> {{ user?.email }} </td>
         <td> {{ user?.age }}  </td>
 
-        <td class="btn-group">
-          <button class="btn btn-success">
-            <i class="bi bi-pencil-square"></i>
-            Editar
+        <td class="btn-group ">
+
+          <button class="btn btn-success d-flex align-items-center justify-content-center" (click)="update(user)">
+            <i class="bi bi-pencil-square" aria-label="Editar"></i>
+            <p class="d-none d-sm-table my-0 ms-1"> Editar </p>
           </button>
+
           <button
-            class="btn btn-danger"
+            class="btn btn-danger d-flex align-items-center justify-content-center"
             (click)="removeUser(user)"
           >
-            <i class="bi bi-trash"></i>
-            Excluir
+            <i class="bi bi-trash" aria-label="Editar"></i>
+            <p class="d-none d-sm-table my-0 ms-1"> Excluir </p>
+
           </button>
+
         </td>
 
       </tr>
 
-
     </tbody>
 
-    <ng-template #emptyList>
-      sem usuários
+    <ng-template #emptyList class="mx-auto">
+
+      <tbody class="text-center" >
+
+        <tr class="align-middle" >
+
+          <th scope="row"> ... </th>
+          <td> ... </td>
+          <td class="">
+            ...
+          </td>
+          <td> ... </td>
+
+        </tr>
+
     </ng-template>
 
   </table>

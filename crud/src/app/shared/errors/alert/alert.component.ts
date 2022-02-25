@@ -26,7 +26,7 @@ export class AlertComponent implements OnInit {
 
   close(option?: any) {
 
-    if (this.msg == 'cadastro realizado com sucesso') {
+    if (this.msg == this.msg) {
       this.userService.refreshUser()
     }
     this.confirmResult.next(option);
