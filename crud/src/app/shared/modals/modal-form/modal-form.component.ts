@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Subject, Observable } from 'rxjs';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 import { DialogService } from 'src/app/shared/services/dialog/dialog.service';
-import { User } from 'src/app/core/user/user';
-import { UserService } from 'src/app/core/user/user.service';
+import { User } from 'src/app/shared/services/user/user';
+import { UserService } from 'src/app/shared/services/user/user.service';
 
 @Component({
   selector: 'app-modal-form',
-  templateUrl: './modal-form.component.html',
-  styleUrls: ['./modal-form.component.scss']
+  templateUrl: './modal-form.component.html'
 })
 export class ModalFormComponent implements OnInit {
 
@@ -41,7 +40,7 @@ export class ModalFormComponent implements OnInit {
     this.formDash = this.formBuilder.group({
 
       fullName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       age: ['', Validators.required]
 
     });
@@ -81,23 +80,24 @@ export class ModalFormComponent implements OnInit {
 
         this.formDash.reset();
         this.modalRef.hide();
-        this.dialogService.alert('Atenção', 'Cadastro realizado com sucesso', 'ok');
+        this.dialogService.alert('Atenção', 'Cadastro realizado com sucesso');
 
       });
 
   }
+
 
   public update() {
 
     const updateUser = this.formDash.getRawValue() as User;
 
     this.userService.updateUser(this.info.id, updateUser)
-    .subscribe(data => {
+      .subscribe(data => {
 
-      this.close()
-      this.dialogService.alert('Atenção', 'Editado', 'ok');
+        this.close();
+        this.dialogService.alert('Atenção', 'Editado com sucesso.', 'ok');
 
-    })
+      });
 
   }
 

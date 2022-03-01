@@ -1,7 +1,7 @@
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { Injectable } from '@angular/core';
-import { AlertComponent } from '../../errors/alert/alert.component';
 
+import { AlertComponent } from '../../modals/alert/alert.component';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,6 @@ export class DialogService {
 
   bsModalRef: BsModalRef = new BsModalRef;
   defaultOptions: ModalOptions = new ModalOptions;
-
 
   constructor(
     public modalService: BsModalService
@@ -34,8 +33,5 @@ export class DialogService {
     return(this.bsModalRef.content as AlertComponent).confirmResult
 
   }
-
-
-
 
 }

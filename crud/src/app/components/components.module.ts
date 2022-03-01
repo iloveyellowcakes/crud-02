@@ -3,13 +3,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
-
-
-
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
+    MessageComponent,
   ],
   imports: [
     CommonModule,
@@ -17,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [
     HeaderComponent,
+    MessageComponent
 
   ]
 })

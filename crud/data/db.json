@@ -1,16 +1,10 @@
 {
   "students": [
     {
-      "fullName": "Lucio",
-      "email": "ana@hotmail.com",
-      "age": 15,
-      "id": 4
-    },
-    {
-      "fullName": "Lucio",
-      "email": "lucio@hotmail.com",
-      "age": 52,
-      "id": 5
+      "fullName": "Germano",
+      "email": "germano@hotmail.com",
+      "age": 60,
+      "id": 1
     }
   ]
 }

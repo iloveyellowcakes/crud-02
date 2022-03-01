@@ -1,13 +1,14 @@
+import { DialogService } from 'src/app/shared/services/dialog/dialog.service';
 import { ModalService } from './../shared/services/modal/modal.service';
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 
-import { User } from 'src/app/core/user/user';
-import { UserService } from '../core/user/user.service';
+import { User } from 'src/app/shared/services/user/user';
+import { UserService } from '../shared/services/user/user.service';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
 
@@ -15,12 +16,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   constructor(
     private userService: UserService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private dialogService: DialogService
 
   ) { }
 
   ngOnInit(): void {
-    this.getAllUser();
+    this.userService.refreshUser()
   }
 
   ngAfterViewInit() {
@@ -30,25 +32,21 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       });
   }
 
-  getAllUser() {
-    this.userService.getUser()
-      .subscribe((res) => this.users = res);
-  }
-
-  removeUser(userId: any) {
+  public removeUser(userId: any) {
     this.userService.removeUser(userId.id)
       .subscribe({
         next: () => {
-          this.getAllUser();
+          this.dialogService.alert('Atenção', 'Excluído com sucesso')
+          this.userService.refreshUser()
         }
       });
   }
 
-  register() {
+  public register() {
     this.modalService.modalForm('Cadastro', 'Cadastrar', 'Cancelar')
   }
 
-  update(userId: any) {
+  public update(userId: any) {
 
     const id = userId
     this.modalService.modalForm('Editar', 'Editar', 'Cancelar', id)

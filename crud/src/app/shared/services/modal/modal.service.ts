@@ -1,4 +1,4 @@
-import { ModalFormComponent } from './../../errors/modal-form/modal-form.component';
+import { ModalFormComponent } from '../../modals/modal-form/modal-form.component';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { Injectable, TemplateRef } from '@angular/core';
 

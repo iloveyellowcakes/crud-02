@@ -21,6 +21,8 @@
 
   <form class="form container" [formGroup]="formDash">
 
+
+
     <div class="mb-3">
       <label for="name"> Nome </label>
       <input
@@ -39,6 +41,16 @@
         class="form-control"
         formControlName="email"
       >
+      <app-message
+        *ngIf="formDash.get('email')?.errors?.['required']
+          && formDash.get('email')?.touched"
+        message="Email obrigatório"
+      ></app-message>
+      <app-message
+        *ngIf="formDash.get('email')?.errors?.['email']
+          && formDash.get('email')?.touched"
+        message="Email invalido"
+      ></app-message>
     </div>
 
     <div class="mb-3">
