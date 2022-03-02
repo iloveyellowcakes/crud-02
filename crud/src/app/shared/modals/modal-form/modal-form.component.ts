@@ -4,7 +4,7 @@ import { Subject, Observable } from 'rxjs';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 import { DialogService } from 'src/app/shared/services/dialog/dialog.service';
-import { User } from 'src/app/shared/services/user/user';
+import { Student } from 'src/app/shared/services/user/student';
 import { UserService } from 'src/app/shared/services/user/user.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class ModalFormComponent implements OnInit {
   confirmResult!: Subject<boolean>;
 
   formDash!: FormGroup;
-  user$!: Observable<User[]>;
+  user$!: Observable<Student[]>;
 
   constructor(
 
@@ -73,7 +73,7 @@ export class ModalFormComponent implements OnInit {
 
   public register() {
 
-    const newUser = this.formDash.getRawValue() as User;
+    const newUser = this.formDash.getRawValue() as Student;
 
     this.userService.addUser(newUser)
       .subscribe(() => {
@@ -89,7 +89,7 @@ export class ModalFormComponent implements OnInit {
 
   public update() {
 
-    const updateUser = this.formDash.getRawValue() as User;
+    const updateUser = this.formDash.getRawValue() as Student;
 
     this.userService.updateUser(this.info.id, updateUser)
       .subscribe(data => {

@@ -1,10 +1,42 @@
 {
   "students": [
     {
-      "fullName": "Germano",
-      "email": "germano@hotmail.com",
-      "age": 60,
+      "fullName": "Lucio",
+      "email": "lucio@hotmail.com",
+      "age": 15,
       "id": 1
+    }
+  ],
+  "signup": [
+    {
+      "userName": "danielle",
+      "email": "danielle@hotmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "userName": "Danielle Alves",
+      "email": "danielle@hotmail.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "userName": "Ana clara",
+      "email": "ana@hotmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "userName": "lenin",
+      "email": "lenin@hotmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "userName": "lenin",
+      "email": "lenin@hotmail.com",
+      "password": "123456",
+      "id": 5
     }
   ]
 }

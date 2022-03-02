@@ -16,7 +16,7 @@ const routes: Routes = [
         .then((m) => m.HomeModule)
   },
   {
-    path: 'dashboard',
+    path: 'dashboard/:userName',
     component: DashboardComponent
   }
 ];

@@ -1,47 +1,88 @@
-<form action="" class="form mx-auto mt-3">
+<form class="form mx-auto mt-3" [formGroup]="loginForm">
 
   <div class=" mb-3 ">
 
-    <label for="user" class="form-label text-primary ps-2"> Usuário </label>
-    <input
-      type="text"
-      class="form-control text-primary rounded border-primary"
-      aria-label="Usuário"
-      placeholder="Usuário"
-      id="user"
-      formControlName="userName"
+    <label for="email" class="form-label text-primary ps-2"> Email </label>
+    <div class="input-group position-relative d-flex align-items-center">
+      <input
+        type="email"
+        class="form-control text-primary rounded border-primary input ps-4 "
+        aria-label="Email"
+        placeholder="seuemail@hotmail.com"
+        id="email"
+        formControlName="email"
+      >
+      <i class="bi bi-person-fill position-absolute px-2 text-primary"></i>
+    </div>
+    <app-message
+      *ngIf="loginForm.get('email')?.errors?.['required']
+        && loginForm.get('email')?.touched"
+      message="Email obrigatório"
     >
+    </app-message>
+    <app-message
+      *ngIf="loginForm.get('email')?.errors?.['email']
+        && loginForm.get('email')?.touched"
+      message="Email no formato invalido"
+    >
+    </app-message>
+  </div>
+
+  <div class="mb-3">
+
+    <div class=" mb-3 ">
+
+      <label for="password" class="form-label text-primary ps-2"> Senha </label>
+      <div class="input-group position-relative d-flex align-items-center">
+        <input
+          type="password"
+          class="form-control text-primary rounded border-primary input ps-4"
+          aria-label="Senha"
+          placeholder="Senha"
+          id="password"
+          formControlName="password"
+        >
+        <i class="bi bi-lock-fill position-absolute px-2 text-primary"></i>
+
+      </div>
+      <app-message
+        *ngIf="loginForm.get('password')?.errors?.['required']
+          && loginForm.get('password')?.touched"
+        message="Senha obrigatória"
+      >
+      </app-message>
+      <app-message
+        *ngIf="loginForm.get('password')?.errors?.['minlength']
+          && loginForm.get('password')?.touched"
+        message="Tamanho mínimo de 6 caracteres"
+      >
+      </app-message>
+
+    </div>
+
+    <div class="form-check mt-1">
+      <label class="form-check-label" for="defaultCheck1">
+        Lembre-me
+      </label>
+      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+    </div>
 
   </div>
 
-  <div class=" mb-3 ">
-
-    <label for="password" class="form-label text-primary ps-2"> Senha </label>
-    <input
-      type="password"
-      class="form-control text-primary rounded border-primary "
-      aria-label="Senha"
-      placeholder="Senha"
-      id="password"
-      formControlName="password"
-    >
-
-  </div>
-
-  <div class="d-grid">
+  <div class="d-grid ">
     <button
       type="button"
       class="btn btn-primary text-secondary"
-
-
+      [disabled]="loginForm.invalid"
+      (click)="login()"
     >
       Entrar
     </button>
   </div>
 
-  <hr class="bg-primary mt-5">
-
-  <p class="text-center text-primary mt-2"> Entre com </p>
-
+  <p class="mt-3">
+    Não tem um cadastro?
+    <a [routerLink]="['signup']"> Cadastre-se </a>
+  </p>
 
 </form>

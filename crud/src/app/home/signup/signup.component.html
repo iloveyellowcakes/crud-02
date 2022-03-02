@@ -1,44 +1,55 @@
-<form action="" class="form mx-auto mt-3" >
+<form class="form mx-auto mt-3" [formGroup]="signupForm" >
 
-  <div class=" mb-3 ">
+  <div class="mb-3">
 
     <label for="user" class="form-label text-primary ps-2"> Usuário </label>
-    <input
-      type="text"
-      class="form-control text-primary rounded border-primary"
-      aria-label="Usuário"
-      placeholder="Usuário"
-      id="user"
-      formControlName="userName"
-    >
+    <div class="input-group position-relative d-flex align-items-center">
+      <input
+        type="text"
+        class="form-control text-primary rounded border-primary input ps-4"
+        aria-label="Usuário"
+        placeholder="Usuário"
+        id="user"
+        formControlName="userName"
+      >
+      <i class="bi bi-person-fill position-absolute px-2 text-primary"></i>
+
+    </div>
 
   </div>
 
-  <div class=" mb-3 ">
+  <div class=" mb-3 text- ">
 
     <label for="email" class="form-label text-primary ps-2"> Email </label>
-    <input
+    <div class="input-group position-relative d-flex align-items-center">
+      <input
       type="email"
-      class="form-control text-primary rounded border-primary"
+      class="form-control text-primary rounded border-primary input ps-4 "
       aria-label="Email"
-      placeholder="Email"
+      placeholder="seuemail@hotmail.com"
       id="email"
       formControlName="email"
-    >
+      >
+      <i class="bi bi-envelope-fill position-absolute px-2 text-primary"></i>
+    </div>
 
   </div>
 
   <div class=" mb-3 ">
 
     <label for="password" class="form-label text-primary ps-2"> Senha </label>
-    <input
-      type="password"
-      class="form-control text-primary rounded border-primary "
-      aria-label="Senha"
-      placeholder="Senha"
-      id="password"
-      formControlName="password"
-    >
+    <div class="input-group position-relative d-flex align-items-center">
+      <input
+        type="password"
+        class="form-control text-primary rounded border-primary input ps-4"
+        aria-label="Senha"
+        placeholder="Senha"
+        id="password"
+        formControlName="password"
+      >
+      <i class="bi bi-lock-fill position-absolute px-2 text-primary"></i>
+
+    </div>
 
   </div>
 
@@ -46,15 +57,16 @@
     <button
       type="button"
       class="btn btn-primary text-secondary"
-
+      [disabled]="signupForm.invalid"
+      (click)="signup()"
     >
-      Entrar
+      Cadastrar
     </button>
   </div>
 
-  <hr class="bg-primary mt-5">
-
-  <p class="text-center text-primary mt-2"> Entre com </p>
-
+  <p class="mt-1">
+    Já tem um cadastro?
+    <a [routerLink]="['signin']"> Entre </a>
+  </p>
 
 </form>

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Subject } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
-import { User } from './user';
+import { Student } from './student';
 
 const API = environment.ApiUrl;
 
@@ -17,13 +17,13 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public addUser(newUser: User) {
-    return this.httpClient.post<User>(`${API}/students`, newUser)
+  public addUser(newUser: Student) {
+    return this.httpClient.post<Student>(`${API}/students`, newUser)
       .pipe(map((res: any) => { return res; }));
   }
 
   public getUser() {
-    return this.httpClient.get<User>(`${API}/students`)
+    return this.httpClient.get<Student>(`${API}/students`)
       .pipe(map((res: any) => { return res; }));
   }
 
@@ -31,9 +31,9 @@ export class UserService {
     return this.httpClient.delete(`${API}/students/${userId}`);
   }
 
-  public updateUser(userId: number, data: User) {
+  public updateUser(userId: number, data: Student) {
 
-    return this.httpClient.put<User>(`${API}/students/${userId}`, data)
+    return this.httpClient.put<Student>(`${API}/students/${userId}`, data)
       .pipe(map((res: any) => { return res; }));
 
   }

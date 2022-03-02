@@ -3,3 +3,17 @@
 @import 'assets/scss/vars';
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+.form-control:focus {
+  background: none;
+}
+
+.input::placeholder {
+  color: $indigo-300;
+}
+
+.card-default {
+  height: 32rem;
+  width: 25rem;
+}
