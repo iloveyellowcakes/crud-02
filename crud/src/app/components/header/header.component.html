@@ -4,8 +4,12 @@
 
     <h1 class="navbar-brand text-white"> CRUD </h1>
 
-    <a [routerLink]="['']" routerLinkActive="d-none" class="text-white text-decoration-none">
-      <i class="bi bi-box-arrow-right"></i>
+    <a
+      [routerLink]="['home']"
+      routerLinkActive="d-none"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="text-white text-decoration-none">
+        <i class="bi bi-box-arrow-right"></i>
       Logout
     </a>
 

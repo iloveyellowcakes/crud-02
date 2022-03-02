@@ -1,4 +1,4 @@
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { StudentService } from 'src/app/shared/services/student/student.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -17,7 +17,7 @@ export class AlertComponent implements OnInit {
 
   constructor(
     public modalRef: BsModalRef,
-    private userService: UserService
+    private userService: StudentService
   ) {
     this.confirmResult = new Subject();
   }

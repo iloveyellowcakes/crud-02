@@ -4,8 +4,8 @@ import { Subject, Observable } from 'rxjs';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 import { DialogService } from 'src/app/shared/services/dialog/dialog.service';
-import { Student } from 'src/app/shared/services/user/student';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { Student } from 'src/app/shared/services/student/student';
+import { StudentService } from 'src/app/shared/services/student/student.service';
 
 @Component({
   selector: 'app-modal-form',
@@ -27,7 +27,7 @@ export class ModalFormComponent implements OnInit {
   constructor(
 
     public modalRef: BsModalRef,
-    private userService: UserService,
+    private userService: StudentService,
     private dialogService: DialogService,
     private formBuilder: FormBuilder
 

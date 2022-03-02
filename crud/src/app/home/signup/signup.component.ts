@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
     this.signupService.addUser(newUser)
       .subscribe(() => {
         this.dialogService.alert('Atenção', 'Cadastro realizado com sucesso! Favor efetuar login.');
-        this.router.navigate(['signin']);
+        this.router.navigate(['']);
       });
 
   }

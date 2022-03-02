@@ -1,42 +1,34 @@
 {
   "students": [
     {
-      "fullName": "Lucio",
-      "email": "lucio@hotmail.com",
-      "age": 15,
+      "fullName": "catapora",
+      "email": "daniellerukia@hotmail.com",
+      "age": 123,
       "id": 1
     }
   ],
-  "signup": [
+  "users": [
     {
+      "email": "daniellerukia@hotmail.com",
+      "password": "$2a$10$qtJSkH4LeNHLuCK8yckGT.B3z/Bg3JA16my2WBENHKwDQY9E/dBZa",
       "userName": "danielle",
-      "email": "danielle@hotmail.com",
-      "password": "123456",
       "id": 1
     },
     {
-      "userName": "Danielle Alves",
-      "email": "danielle@hotmail.com",
-      "password": "123456",
+      "email": "daniellerukia2@hotmail.com",
+      "password": "$2a$10$PlFiUxlK2iJ2Yfuna51ILOiqu9iwGk4VCA8XcEGv2AQdt17QGBUkK",
+      "userName": "danielle2",
       "id": 2
     },
     {
-      "userName": "Ana clara",
-      "email": "ana@hotmail.com",
-      "password": "123456",
+      "email": "lenin@a.com",
+      "password": "$2a$10$9v483pxaEyChDavEJj6o3ub3GJD.zyuZPkofq.WCT5wN5KVgiMer.",
+      "userName": "lenin",
       "id": 3
-    },
-    {
-      "userName": "lenin",
-      "email": "lenin@hotmail.com",
-      "password": "123456",
-      "id": 4
-    },
-    {
-      "userName": "lenin",
-      "email": "lenin@hotmail.com",
-      "password": "123456",
-      "id": 5
     }
-  ]
+  ],
+  "login": [
+    {}
+  ],
+  "signup": []
 }

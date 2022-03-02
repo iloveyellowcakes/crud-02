@@ -1,10 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-
+// Imports
 @import 'assets/scss/vars';
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-
+// Global Styles
 .form-control:focus {
   background: none;
 }
@@ -14,6 +13,8 @@
 }
 
 .card-default {
-  height: 32rem;
+
+  height: 30rem;
   width: 25rem;
+
 }
