@@ -37,6 +37,12 @@
       "password": "$2a$10$SAb2.cslTdHK17VbyZT7m.UxEOwk4vGoIQ5AiBFhAz26TNNycOZtu",
       "userName": "lucio",
       "id": 3
+    },
+    {
+      "email": "ana2@hotmail.com",
+      "password": "$2a$10$Nh3vO0SrRTa796u3fxVVK.tO4hEHTdPRB.aPe/h4nzTEOnj7UL8f6",
+      "userName": "alvaro",
+      "id": 4
     }
   ],
   "login": [
