@@ -1,29 +1,41 @@
 {
   "students": [
     {
-      "fullName": "catapora",
-      "email": "daniellerukia@hotmail.com",
-      "age": 123,
+      "fullName": "Lucio",
+      "email": "lucio@hotmail.com",
+      "age": 15,
       "id": 1
+    },
+    {
+      "fullName": "Maria",
+      "email": "maria@a.email",
+      "age": 15,
+      "id": 2
+    },
+    {
+      "fullName": "Fernando",
+      "email": "fernando@hotmail.com",
+      "age": 14,
+      "id": 3
     }
   ],
   "users": [
     {
-      "email": "daniellerukia@hotmail.com",
-      "password": "$2a$10$qtJSkH4LeNHLuCK8yckGT.B3z/Bg3JA16my2WBENHKwDQY9E/dBZa",
-      "userName": "danielle",
+      "email": "ana@hotmail.com",
+      "password": "$2a$10$IVtSuKjiAYONOcILsNjQmOq2sWO7fmI08aotz/S3pK7GQU2/23OSS",
+      "userName": "ana",
       "id": 1
     },
     {
-      "email": "daniellerukia2@hotmail.com",
-      "password": "$2a$10$PlFiUxlK2iJ2Yfuna51ILOiqu9iwGk4VCA8XcEGv2AQdt17QGBUkK",
-      "userName": "danielle2",
+      "email": "danielle@hotmail.com",
+      "password": "$2a$10$gdbamIS5GFvM7BdrpzkhjulK7uBafpvB8Tk.UR.omt4GM4Mozsn16",
+      "userName": "danielle",
       "id": 2
     },
     {
-      "email": "lenin@a.com",
-      "password": "$2a$10$9v483pxaEyChDavEJj6o3ub3GJD.zyuZPkofq.WCT5wN5KVgiMer.",
-      "userName": "lenin",
+      "email": "lucio@hotmail.com",
+      "password": "$2a$10$SAb2.cslTdHK17VbyZT7m.UxEOwk4vGoIQ5AiBFhAz26TNNycOZtu",
+      "userName": "lucio",
       "id": 3
     }
   ],

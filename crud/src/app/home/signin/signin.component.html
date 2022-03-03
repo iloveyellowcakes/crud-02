@@ -45,7 +45,7 @@
         <i class="bi bi-lock-fill position-absolute px-2 text-primary"></i>
 
       </div>
-      <app-message
+      <!-- <app-message
         *ngIf="loginForm.get('password')?.errors?.['required']
           && loginForm.get('password')?.touched"
         message="Senha obrigatória"
@@ -56,7 +56,8 @@
           && loginForm.get('password')?.touched"
         message="Tamanho mínimo de 6 caracteres"
       >
-      </app-message>
+      </app-message> -->
+      <app-message field="loginForm.controls.password"></app-message>
 
     </div>
 

@@ -13,8 +13,13 @@
         formControlName="userName"
       >
       <i class="bi bi-person-fill position-absolute px-2 text-primary"></i>
-
     </div>
+    <app-message
+        *ngIf="signupForm.get('userName')?.errors?.['required']
+          && signupForm.get('userName')?.touched"
+        message="Usuário obrigatório"
+    >
+    </app-message>
 
   </div>
 
@@ -32,6 +37,18 @@
       >
       <i class="bi bi-envelope-fill position-absolute px-2 text-primary"></i>
     </div>
+    <app-message
+      *ngIf="signupForm.get('email')?.errors?.['required']
+        && signupForm.get('email')?.touched"
+      message="Email obrigatório"
+    >
+    </app-message>
+    <app-message
+      *ngIf="signupForm.get('email')?.errors?.['email']
+        && signupForm.get('email')?.touched"
+      message="Email no formato invalido"
+    >
+    </app-message>
 
   </div>
 
@@ -50,6 +67,18 @@
       <i class="bi bi-lock-fill position-absolute px-2 text-primary"></i>
 
     </div>
+    <app-message
+        *ngIf="signupForm.get('password')?.errors?.['required']
+          && signupForm.get('password')?.touched"
+        message="Senha obrigatória"
+      >
+      </app-message>
+      <app-message
+        *ngIf="signupForm.get('password')?.errors?.['minlength']
+          && signupForm.get('password')?.touched"
+        message="Tamanho mínimo de 6 caracteres"
+      >
+      </app-message>
 
   </div>
 

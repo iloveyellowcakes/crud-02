@@ -17,8 +17,8 @@ export class StudentService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public addUser(newUser: Student) {
-    return this.httpClient.post<Student>(`${API}/students`, newUser)
+  public addUser(newStudent: Student) {
+    return this.httpClient.post<Student>(`${API}/students`, newStudent)
       .pipe(map((res: any) => { return res; }));
   }
 

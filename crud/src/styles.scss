@@ -4,12 +4,16 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 // Global Styles
+.dashboard__section{
+  height: calc(100vh - 3.6rem);
+}
+
 .form-control:focus {
   background: none;
 }
 
 .input::placeholder {
-  color: $indigo-300;
+  color: $primary;
 }
 
 .card-default {
