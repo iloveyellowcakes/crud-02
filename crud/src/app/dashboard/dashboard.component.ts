@@ -46,10 +46,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.modalService.modalForm('Cadastro', 'Cadastrar', 'Cancelar')
   }
 
-  public update(userId: any) {
+  public update(user: any) {
 
-    const id = userId
-    this.modalService.modalForm('Editar', 'Editar', 'Cancelar', id)
+    const info = user
+    this.modalService.modalForm('Editar', 'Editar', 'Cancelar', info)
 
   }
 

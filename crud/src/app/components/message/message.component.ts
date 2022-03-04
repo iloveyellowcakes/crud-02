@@ -7,7 +7,7 @@ import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 })
 export class MessageComponent {
 
-  @Input() field!: AbstractControl | undefined;
+  @Input() field: AbstractControl | undefined;
   @Input() name: string = 'Campo';
 
   msgError?: string;
@@ -21,10 +21,10 @@ export class MessageComponent {
     this.msgError = '';
 
     if (field.errors?.required && field.touched) {
-      this.msgError = `${this.name || 'Campo'} obrigatório`;
+      this.msgError = `${this.name} obrigatório`;
     }
     else if (field.errors?.email && field.touched) {
-      this.msgError = `${this.name || 'Campo'} invalido`;
+      this.msgError = `${this.name} invalido`;
     }
     else if (field.errors?.minlength && field.touched) {
       this.msgError = `Mínimo ${field.errors?.minlength.requiredLength} caracteres`;

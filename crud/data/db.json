@@ -1,16 +1,10 @@
 {
   "students": [
     {
-      "fullName": "Maria",
-      "email": "maria@a.email",
-      "age": 15,
-      "id": 2
-    },
-    {
-      "fullName": "Fernando",
-      "email": "fernando@hotmail.com",
+      "fullName": "Lucio",
+      "email": "ana@hotmail.com",
       "age": 14,
-      "id": 3
+      "id": 7
     }
   ],
   "users": [
@@ -37,6 +31,12 @@
       "password": "$2a$10$Nh3vO0SrRTa796u3fxVVK.tO4hEHTdPRB.aPe/h4nzTEOnj7UL8f6",
       "userName": "alvaro",
       "id": 4
+    },
+    {
+      "email": "ana22@hotmail.com",
+      "password": "$2a$10$MpwEuIea82DxABqy6pL/tulT/xIKtw7m0X4cL7ibsoykBfKiIkGGi",
+      "userName": "alvaro",
+      "id": 5
     }
   ],
   "login": [

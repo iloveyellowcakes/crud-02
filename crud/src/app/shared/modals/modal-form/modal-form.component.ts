@@ -80,7 +80,7 @@ export class ModalFormComponent implements OnInit {
 
         this.formDash.reset();
         this.modalRef.hide();
-        this.dialogService.alert('Atenção', 'Cadastro realizado com sucesso');
+        this.dialogService.alert('Atenção', 'Cadastro realizado com sucesso',);
 
       });
 
