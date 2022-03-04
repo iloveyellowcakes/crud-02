@@ -14,18 +14,8 @@
       >
       <i class="bi bi-person-fill position-absolute px-2 text-primary"></i>
     </div>
-    <app-message
-      *ngIf="loginForm.get('email')?.errors?.['required']
-        && loginForm.get('email')?.touched"
-      message="Email obrigatório"
-    >
-    </app-message>
-    <app-message
-      *ngIf="loginForm.get('email')?.errors?.['email']
-        && loginForm.get('email')?.touched"
-      message="Email no formato invalido"
-    >
-    </app-message>
+    <app-message name="Email" [field]="loginForm.controls?.['email']"></app-message>
+
   </div>
 
   <div class="mb-3">
@@ -45,19 +35,7 @@
         <i class="bi bi-lock-fill position-absolute px-2 text-primary"></i>
 
       </div>
-      <!-- <app-message
-        *ngIf="loginForm.get('password')?.errors?.['required']
-          && loginForm.get('password')?.touched"
-        message="Senha obrigatória"
-      >
-      </app-message>
-      <app-message
-        *ngIf="loginForm.get('password')?.errors?.['minlength']
-          && loginForm.get('password')?.touched"
-        message="Tamanho mínimo de 6 caracteres"
-      >
-      </app-message> -->
-      <app-message field="loginForm.controls.password"></app-message>
+      <app-message [field]="loginForm.controls?.['password']"></app-message>
 
     </div>
 
@@ -76,9 +54,8 @@
       class="btn btn-primary text-secondary"
       [disabled]="loginForm.invalid"
       (click)="login()"
-    >
-      Entrar
-    </button>
+    > Entrar </button>
+
   </div>
 
 </form>

@@ -1,36 +1,40 @@
-import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html'
 })
-export class MessageComponent implements OnInit {
+export class MessageComponent {
 
-  @Input() field:any;
-  @Input() name:any;
+  @Input() field!: AbstractControl | undefined;
+  @Input() name: string = 'Campo';
 
-  message: string = '';
+  msgError?: string;
 
   constructor(private renderer: Renderer2, hostElement: ElementRef) {
-    renderer.addClass(hostElement.nativeElement, 'app-message')
+    renderer.addClass(hostElement.nativeElement, 'app-message');
   }
 
-  ngOnInit(): void {
+  validateField(field: any) {
+
+    this.msgError = '';
+
+    if (field.errors?.required && field.touched) {
+      this.msgError = `${this.name || 'Campo'} obrigatório`;
+    }
+    else if (field.errors?.email && field.touched) {
+      this.msgError = `${this.name || 'Campo'} invalido`;
+    }
+    else if (field.errors?.minlength && field.touched) {
+      this.msgError = `Mínimo ${field.errors?.minlength.requiredLength} caracteres`;
+    }
+    else if (field.errors?.maxlength && field.touched) {
+      this.msgError = `Mínimo ${field.errors?.maxlength.requiredLength} caracteres`;
+    }
+
+    return this.msgError != '';
+
   }
 
-  validaCampo(){
-
-    this.message = ''
-
-    if (this.field.errors?.required) {
-      this.message = 'Campo obrigatório'
-    }
-    else if (this.field.errors?.email) {
-      this.message = `${this.name || 'Campo'} inválido`
-    }
-    else if (this.field.errors?.minlength) {
-      this.message = `Tamanho mínimo de ${this.name || 'Campo'} é 6 caracteres `
-    }
-
-  }
 }

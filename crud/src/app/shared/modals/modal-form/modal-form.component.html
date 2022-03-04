@@ -1,4 +1,3 @@
-
 <div class="modal-header bg-primary border-0">
 
   <h5 class="text-center text-secondary w-100 m-auto ps-3">
@@ -21,8 +20,6 @@
 
   <form class="form container" [formGroup]="formDash">
 
-
-
     <div class="mb-3">
       <label for="name"> Nome </label>
       <input
@@ -31,6 +28,7 @@
         id="name"
         formControlName="fullName"
       >
+      <app-message name="Nome" [field]="formDash.controls?.['fullName']"></app-message>
     </div>
 
     <div class="mb-3">
@@ -41,16 +39,7 @@
         class="form-control"
         formControlName="email"
       >
-      <app-message
-        *ngIf="formDash.get('email')?.errors?.['required']
-          && formDash.get('email')?.touched"
-        message="Email obrigatório"
-      ></app-message>
-      <app-message
-        *ngIf="formDash.get('email')?.errors?.['email']
-          && formDash.get('email')?.touched"
-        message="Email invalido"
-      ></app-message>
+      <app-message name="Email" [field]="formDash.controls?.['email']"></app-message>
     </div>
 
     <div class="mb-3">
@@ -61,6 +50,7 @@
         id="age"
         formControlName="age"
       >
+      <app-message [field]="formDash.controls?.['age']"></app-message>
     </div>
 
     <div class="btn-group ">
@@ -80,7 +70,7 @@
         [disabled]="formDash.invalid"
         (click)="cancel()"
       >
-        {{ button2 || 'cancelar' }}
+        {{ button2 || 'Cancelar' }}
       </button>
 
     </div>

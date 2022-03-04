@@ -14,16 +14,11 @@
       >
       <i class="bi bi-person-fill position-absolute px-2 text-primary"></i>
     </div>
-    <app-message
-        *ngIf="signupForm.get('userName')?.errors?.['required']
-          && signupForm.get('userName')?.touched"
-        message="Usuário obrigatório"
-    >
-    </app-message>
+    <app-message [field]="signupForm.controls?.['userName']"></app-message>
 
   </div>
 
-  <div class=" mb-3 text- ">
+  <div class="mb-3">
 
     <label for="email" class="form-label text-primary ps-2"> Email </label>
     <div class="input-group position-relative d-flex align-items-center">
@@ -37,22 +32,11 @@
       >
       <i class="bi bi-envelope-fill position-absolute px-2 text-primary"></i>
     </div>
-    <app-message
-      *ngIf="signupForm.get('email')?.errors?.['required']
-        && signupForm.get('email')?.touched"
-      message="Email obrigatório"
-    >
-    </app-message>
-    <app-message
-      *ngIf="signupForm.get('email')?.errors?.['email']
-        && signupForm.get('email')?.touched"
-      message="Email no formato invalido"
-    >
-    </app-message>
+    <app-message [field]="signupForm.controls?.['email']"></app-message>
 
   </div>
 
-  <div class=" mb-3 ">
+  <div class="mb-3">
 
     <label for="password" class="form-label text-primary ps-2"> Senha </label>
     <div class="input-group position-relative d-flex align-items-center">
@@ -65,20 +49,8 @@
         formControlName="password"
       >
       <i class="bi bi-lock-fill position-absolute px-2 text-primary"></i>
-
     </div>
-    <app-message
-        *ngIf="signupForm.get('password')?.errors?.['required']
-          && signupForm.get('password')?.touched"
-        message="Senha obrigatória"
-      >
-      </app-message>
-      <app-message
-        *ngIf="signupForm.get('password')?.errors?.['minlength']
-          && signupForm.get('password')?.touched"
-        message="Tamanho mínimo de 6 caracteres"
-      >
-      </app-message>
+    <app-message [field]="signupForm.controls?.['password']"></app-message>
 
   </div>
 
@@ -88,9 +60,7 @@
       class="btn btn-primary text-secondary"
       [disabled]="signupForm.invalid"
       (click)="signup()"
-    >
-      Cadastrar
-    </button>
+    > Cadastrar </button>
   </div>
 
 </form>

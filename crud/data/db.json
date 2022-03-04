@@ -1,12 +1,6 @@
 {
   "students": [
     {
-      "fullName": "Lucio",
-      "email": "lucio@hotmail.com",
-      "age": 15,
-      "id": 1
-    },
-    {
       "fullName": "Maria",
       "email": "maria@a.email",
       "age": 15,
